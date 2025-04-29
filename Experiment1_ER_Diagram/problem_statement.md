@@ -48,25 +48,56 @@ Design a database for patient management, appointments, medical records, and bil
 # ER Diagram Submission - Student Name
 
 ## Scenario Chosen:
-University / Hospital (choose one)
+University
 
 ## ER Diagram:
-![ER Diagram](er_diagram.png)
+![image](https://github.com/user-attachments/assets/5d23311f-a90d-4a38-b1e3-57353b8b673d)
+
 
 ## Entities and Attributes:
-- Entity1: Attributes
-- Entity2: Attributes
+- UNIVERSITY -
+Tier,Location,DEPARTMENT,Department_ID,Department_Name,HOD
+
+- COURSES -
+Course_Name,Course_Code,Credits,Pre-requisite
+
+- PROFESSOR -
+ID,Name,Mail_ID,Phone_Number
+
+- STUDENT -
+Student_ID,Student_Name,Mail_ID,Phone_Number,DOB,Address
 ...
 
 ## Relationships and Constraints:
-- Relationship1 (Cardinality, Participation)
-- Relationship2 (Cardinality, Participation)
+- UNIVERSITY — HAS —> DEPARTMENT
+Cardinality: One-to-Many (One university has many departments)
+Participation: Total (Each department must belong to a university)
+
+- UNIVERSITY — HAS —> PROFESSOR
+Cardinality: One-to-Many
+Participation: Total
+
+- DEPARTMENT — OFFERS —> COURSES
+Cardinality: One-to-Many (A department offers multiple courses)
+Participation: Total (Every course is offered by some department)
+
+- PROFESSOR — TAUGHT —> COURSES
+Cardinality: Many-to-Many (Professors can teach multiple courses and courses can be taught by multiple professors)
+Participation: Partial (Not all professors may be teaching at a given time)
+
+- COURSES — ENROLLED BY —> STUDENT
+Cardinality: Many-to-Many (Many students can enroll in many courses)
+Participation: Partial (Some students may not be enrolled in any course)
 ...
 
-## Extension (Prerequisite / Billing):
-- Explain how you modeled prerequisites or billing.
+## Extension (Prerequisite):
+- The "Pre-requisite" attribute in the COURSES entity is modeled to indicate that a course may require completion of another course beforehand. This is kept as a single attribute for simplicity but can be extended into a self-referential relationship for complex prerequisite chains.
 
 ## Design Choices:
-Brief explanation of why you chose certain entities, relationships, and assumptions
+Entities such as Department, Course, Student, Professor, and University are chosen to reflect real-world university components.
+Relationships like "Offers", "Taught", and "Enrolled By" were included to model academic structure and course enrollment.
+Many-to-Many relationships are used where appropriate (e.g., course enrollments, teaching assignments).
+Pre-requisite is represented as an attribute for simplicity but can be normalized into a separate relationship if needed.
 
 ## RESULT
+Thus the ER daigram have been successfully drawn and explained briefly.
