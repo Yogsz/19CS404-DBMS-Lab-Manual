@@ -58,7 +58,7 @@ ON table1.column = table2.column;
 
 
 ```sql
--- SELECT 
+    SELECT 
     o.ord_no,
     o.purch_amt,
     o.ord_date,
@@ -87,7 +87,7 @@ JOIN
 
 
 ```sql
--- SELECT 
+   SELECT 
     c.cust_name,
     c.city,
     o.ord_no,
@@ -114,7 +114,7 @@ LEFT JOIN
 
 
 ```sql
--- SELECT s.*
+ SELECT s.*
 FROM salesman s
 LEFT JOIN customer c ON s.salesman_id = c.salesman_id
 WHERE c.cust_name = 'Fabian Johns';
@@ -131,7 +131,7 @@ WHERE c.cust_name = 'Fabian Johns';
 
 
 ```sql
--- SELECT s.name AS Salesman, c.cust_name, s.city
+ SELECT s.name AS Salesman, c.cust_name, s.city
 FROM salesman s
 JOIN customer c ON s.city = c.city;
 
@@ -148,7 +148,7 @@ JOIN customer c ON s.city = c.city;
 
 
 ```sql
--- SELECT s.name
+ SELECT s.name
 FROM salesman s
 LEFT JOIN customer c ON s.salesman_id = c.salesman_id
 WHERE c.city = 'London';
@@ -166,7 +166,7 @@ WHERE c.city = 'London';
 
 
 ```sql
--- SELECT c.cust_name as 'Customer Name', c.city, s.name AS Salesman, s.commission
+SELECT c.cust_name as 'Customer Name', c.city, s.name AS Salesman, s.commission
 FROM customer c
 JOIN salesman s ON c.salesman_id = s.salesman_id
 WHERE s.commission > 0.12;
@@ -184,7 +184,7 @@ WHERE s.commission > 0.12;
 
 
 ```sql
--- SELECT 
+    SELECT 
     customer.cust_name, 
     customer.city , 
     customer.grade, 
@@ -212,7 +212,7 @@ ORDER BY
 
 
 ```sql
--- SELECT 
+    SELECT 
     patients.first_name, 
     patients.last_name
 FROM 
@@ -235,7 +235,7 @@ WHERE
 
 
 ```sql
--- SELECT 
+    SELECT 
     patients.admission_date, 
     surgeries.surgery_date
 FROM 
@@ -256,7 +256,7 @@ INNER JOIN
 
 
 ```sql
--- SELECT 
+    SELECT 
     n.*, 
     d.department_name
 FROM 
